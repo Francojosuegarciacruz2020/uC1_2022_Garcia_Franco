@@ -10,7 +10,7 @@
 
 **Lenguaje:** AMS - C
 
-**Nombre del Repositorio =** uC1_2022_Garcia_Franco
+**Nombre del Repositorio:** uC1_2022_Garcia_Franco
 
 **Descripción del Repositorio:** Este Repositorio tiene como contenido los traabajos encargados y exámenes hechos en MPLAB X IDE.
 
