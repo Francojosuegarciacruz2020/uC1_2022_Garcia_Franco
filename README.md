@@ -1,6 +1,6 @@
 # UNP
-## Curso: Microcontroladores I
-## Autor: Franco Josue Garcia Cruz
+## Curso: ## Microcontroladores I
+## Autor: ##  Franco Josue Garcia Cruz
 ## Tarjeta: Curiosity Nano PIC18F57Q84
 ## Entorno: MLAB X IDE (V6.00)
 ## Lenguaje: AMS - C
