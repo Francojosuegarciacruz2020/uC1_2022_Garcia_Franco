@@ -1,4 +1,4 @@
-UNP
+#UNP
 
 **Curso:** Microcontroladores I
 
@@ -18,8 +18,8 @@ UNIVERSIDAD NACIONAL DE PIURA
 
 —> Listado de prácticas:
 
->>Retardos.inc
+1. Retardos.inc
 
->>Practica_1.x (P1-Corrimiento_Leds)
+2. Practica_1.x (P1-Corrimiento_Leds)
 
->>Practica_2.x (P2-Display_7SEG)
+3. Practica_2.x (P2-Display_7SEG)
