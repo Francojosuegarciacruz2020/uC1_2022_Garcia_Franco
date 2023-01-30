@@ -23,3 +23,5 @@ UNIVERSIDAD NACIONAL DE PIURA
 2. Practica_1.x (P1-Corrimiento_Leds)
 
 3. Practica_2.x (P2-Display_7SEG)
+
+4.PARCIAL_02.X
