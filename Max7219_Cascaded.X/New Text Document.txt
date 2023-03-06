@@ -1,0 +1,76 @@
+#ifndef MAX7219_H
+#define	MAX7219_H
+//------------------------Dot Matrix LED  Driver--------------------------------
+#include "Soft_SPI.h"
+#include "MAX7219_Prototypes.h"
+//------------------------------------------------------------------------------
+void MAX7219_Go(char reg,char data)
+{
+  CS0 = 0;
+   
+  SPI_write(reg); 
+  SPI_write(data); 
+  
+  SPI_write(0x00); 
+  SPI_write(0x07);
+  //MAX7219_write(0x0000);
+   
+  CS0 = 1;
+}
+//------------------------------------------------------------------------------
+void MAX7219_init()
+{
+  /*
+  MAX7219_write(DECODE_MODE_REG,DISABLE_DECODE);    
+  MAX7219_write(INTESITY_REG,BRIGHTNESS);     
+  MAX7219_write(SCAN_LIMIT_REG,SCAN_ALL_DIGITS);     
+  MAX7219_write(SHUTDOWN_REG,NORMAL_OPERATION);
+  MAX7219_write(DISPLAY_TEST_REG,DISABLE_TEST);   
+   */ 
+  MAX7219_Go(DECODE_MODE_REG,DISABLE_DECODE);    
+  MAX7219_Go(INTESITY_REG,BRIGHTNESS);     
+  MAX7219_Go(SCAN_LIMIT_REG,SCAN_ALL_DIGITS);     
+  MAX7219_Go(SHUTDOWN_REG,NORMAL_OPERATION);
+  MAX7219_Go(DISPLAY_TEST_REG,DISABLE_TEST);   
+}
+//------------------------------------------------------------------------------
+void MAX7219_write(char reg,char data)
+{
+  CS0 = 0;
+   
+  SPI_write(reg); 
+  SPI_write(data); 
+  //MAX7219_write(0x0000);
+   
+  CS0 = 1;
+}
+//------------------------------------------------------------------------------
+void MAX7219_displayText(char* text)
+{ 
+  char count = 0;
+  
+
+  
+  while(*text)
+  { 
+    char row = (*text++) - 32;//(Text-32): because the first 32 ASCII character codes are none Printable (Control chars)
+    
+    for(int col = 0; col < 8; col++)
+    {
+     CS0 = 0;        
+     
+     SPI_write(col); 
+     SPI_write(symbol[row][col]);
+    
+     SPI_write(0x00); 
+     SPI_write(0x07);
+     
+     CS0 = 1;
+     //MAX7219_write( col, symbol[row][col] );
+     
+     count++;
+    }
+  }
+}
+//------------------------------------------------------------------------------
+#endif	
